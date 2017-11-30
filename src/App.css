@@ -26,9 +26,3 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
-div.slide {
-  height: 100px;
-  padding: 10px;
-  background-color: yellow;
-}
