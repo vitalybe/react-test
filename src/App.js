@@ -6,7 +6,19 @@ import Swiper from "react-id-swiper";
 import "react-id-swiper/src/styles/css/swiper.css";
 
 function MyComponent(props) {
-  return <div className="slide">Awesome slide</div>
+  return <div className="slide">Awesome slide</div>;
+}
+
+class FixedSwiper extends Component {
+  render() {
+    return (
+      <Swiper>
+        {this.props.children.map(child => {
+          return <div>{child}</div>;
+        })}
+      </Swiper>
+    );
+  }
 }
 
 class App extends Component {
@@ -22,17 +34,30 @@ class App extends Component {
 
         <h1>Component slides do not work</h1>
         <Swiper>
-          <MyComponent/>
-          <MyComponent/>
-          <MyComponent/>
+          <MyComponent />
+          <MyComponent />
+          <MyComponent />
         </Swiper>
 
         <h1>I can make it work by wrapping each slide with a div</h1>
         <Swiper>
-          <div><MyComponent/></div>
-          <div><MyComponent/></div>
-          <div><MyComponent/></div>
+          <div>
+            <MyComponent />
+          </div>
+          <div>
+            <MyComponent />
+          </div>
+          <div>
+            <MyComponent />
+          </div>
         </Swiper>
+
+        <h1>Does it fix it?</h1>
+        <FixedSwiper>
+          <MyComponent />
+          <MyComponent />
+          <MyComponent />
+        </FixedSwiper>
       </div>
     );
   }
