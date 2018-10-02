@@ -6,15 +6,19 @@ import "./App.css";
 const TooltipPosed = posed.div({
   enter: {
     opacity: 1,
+    x: 0,
+    transition: { duration: 500 },
   },
   exit: {
     opacity: 0,
+    x: 30,
+    transition: { duration: 500 },
   },
 });
 
 class Tooltip extends Component {
   render() {
-    return <TooltipPosed className="tooltip" />;
+    return <TooltipPosed className="tooltip" {...this.props} />;
   }
 }
 
@@ -26,14 +30,12 @@ class Marker extends Component {
       <div
         className="marker"
         onMouseEnter={() => {
-          console.log("enter");
           return this.setState({ mouseOver: true });
         }}
         onMouseLeave={() => {
-          console.log("leave");
           return this.setState({ mouseOver: false });
         }}>
-        <PoseGroup>{this.state.mouseOver ? <TooltipPosed className="tooltip" key={this.props.id} /> : null}</PoseGroup>
+        <PoseGroup>{this.state.mouseOver ? <Tooltip key={this.props.id} /> : null}</PoseGroup>
       </div>
     );
   }
