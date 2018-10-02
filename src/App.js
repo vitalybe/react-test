@@ -11,7 +11,7 @@ const TooltipPosed = posed.div({
   },
   exit: {
     opacity: 0,
-    x: 30,
+    x: -30,
     transition: { duration: 500 },
   },
 });
@@ -27,27 +27,34 @@ class Marker extends Component {
 
   render() {
     return (
-      <div
-        className="marker"
-        onMouseEnter={() => {
-          return this.setState({ mouseOver: true });
-        }}
-        onMouseLeave={() => {
-          return this.setState({ mouseOver: false });
-        }}>
-        <PoseGroup>{this.state.mouseOver ? <Tooltip key={this.props.id} /> : null}</PoseGroup>
+      <div className="marker" onMouseEnter={this.props.onActive}>
+        <PoseGroup>{this.props.isSelected ? <Tooltip key={this.props.id} /> : null}</PoseGroup>
       </div>
     );
   }
 }
 
 class App extends Component {
+  state = {
+    selectedMarkerId: 1,
+  };
+
+  constructor(props) {
+    super(props);
+
+    this.markerIds = [1, 2, 3];
+  }
+
   render() {
     return (
       <div className="landscape">
-        <Marker id={1} />
-        <Marker id={2} />
-        <Marker id={3} />
+        {this.markerIds.map(id => (
+          <Marker
+            id={id}
+            isSelected={this.state.selectedMarkerId === id}
+            onActive={() => this.setState({ selectedMarkerId: id })}
+          />
+        ))}
       </div>
     );
   }
