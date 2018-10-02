@@ -3,3 +3,31 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+div.landscape {
+  height: 200px;
+  width: 1000px;
+  background-color: lavender;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+
+div.marker {
+  margin: 1em;
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  position: relative;
+}
+
+div.tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 12px;
+
+  height: 26px;
+  width: 26px;
+  background-color: yellow;
+  border: 1px solid black;
+}
