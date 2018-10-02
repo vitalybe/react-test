@@ -4,15 +4,21 @@ import posed, { PoseGroup } from "react-pose";
 import "./App.css";
 
 const TooltipPosed = posed.div({
+  initial: {
+    opacity: 0,
+    x: 30,
+    transition: { duration: 200 },
+  },
   enter: {
     opacity: 1,
     x: 0,
-    transition: { duration: 500 },
+    transition: { duration: 200, delay: 300 },
+
   },
   exit: {
     opacity: 0,
     x: -30,
-    transition: { duration: 500 },
+    transition: { duration: 200 },
   },
 });
 
@@ -28,7 +34,7 @@ class Marker extends Component {
   render() {
     return (
       <div className="marker" onMouseEnter={this.props.onActive}>
-        <PoseGroup>{this.props.isSelected ? <Tooltip key={this.props.id} /> : null}</PoseGroup>
+        <PoseGroup preEnterPose={"initial"}>{this.props.isSelected ? <Tooltip key={this.props.id} /> : null}</PoseGroup>
       </div>
     );
   }
@@ -36,7 +42,7 @@ class Marker extends Component {
 
 class App extends Component {
   state = {
-    selectedMarkerId: 1,
+    selectedMarkerId: 0,
   };
 
   constructor(props) {
