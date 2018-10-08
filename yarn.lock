@@ -5931,6 +5931,13 @@ react-error-overlay@^3.0.0:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
   integrity sha512-XzgvowFrwDo6TWcpJ/WTiarb9UI6lhA4PMzS7n1joK3sHfBBBOQHUc0U4u57D6DWO9vHv6lVSWx2Q/Ymfyv4hw==
 
+react-flip-toolkit@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/react-flip-toolkit/-/react-flip-toolkit-5.0.2.tgz#ca18805709ce8f0a3897c46bd61cf71ef33aaa98"
+  integrity sha512-li9eQwcHlVNy4oo+AoHi9w2+5O8UcjFq1e5zY08QqidNQV4nBDn+wV5wKWohruO8EArGUda8GoGjUjvy7ewXxQ==
+  dependencies:
+    rematrix "^0.2.2"
+
 react-scripts@1.0.17:
   version "1.0.17"
   resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-1.0.17.tgz#c30029123b561a060227af4d7797d50a222d3fbf"
@@ -6166,6 +6173,11 @@ relateurl@0.2.x:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/relateurl/-/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
   integrity sha1-VNvzd+UUQKypCkzSdGANP/LYiKk=
+
+rematrix@^0.2.2:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/rematrix/-/rematrix-0.2.3.tgz#37ec6b060a3c03c0fde3cf5628c6e109ea51e9d4"
+  integrity sha512-azqvZjYaJZhWy2kxcajtyweoAmLDeqIvqMK8nEJW18vTJut58LO5KmfEK8Jkws/el9aTbyWBXhjvawDjR82hWg==
 
 remove-trailing-separator@^1.0.1:
   version "1.1.0"
