@@ -4,35 +4,3 @@ body {
   font-family: sans-serif;
 }
 
-.parent {
-  display: flex;
-  width: 800px;
-  height: 600px;
-  background-color: grey;
-  flex-direction: column;
-}
-
-.top {
-  background-color: lavender;
-  padding: 1em;
-}
-
-.main {
-  flex: 1;
-  padding: 1em;
-  background-color: aquamarine;
-}
-
-.bottom {
-  background-color: beige;
-  padding: 1em;
-}
-
-.bottom.expanded {
-  flex: 1
-}
-
-.additional {
-  background-color: lightsteelblue;
-  padding: 1em;
-}
